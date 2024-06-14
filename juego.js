@@ -60,9 +60,9 @@ function mostrarElemento() {
         document.getElementById('elemento').innerText = '¡Juego terminado!';
         document.getElementById('imagenElemento').src = 'images/final.png';
         document.getElementById('resultado').innerText = `Puntuación: ${puntaje}`;
-        document.getElementById('btnReiniciar').style.visibility = 'visible'; 
-        document.getElementById('btnRecicla').style.visibility = 'hidden';
-        document.getElementById('btnNoRecicla').style.visibility = 'hidden'; 
+        document.getElementById('btnReiniciar').style.display = 'block'; 
+        document.getElementById('btnRecicla').style.display = 'none';
+        document.getElementById('btnNoRecicla').style.display = 'none'; 
     }
 }
 
@@ -96,9 +96,9 @@ function reiniciarJuego() {
     racha = 0;
 
     document.getElementById('resultado').innerText = '';
-    document.getElementById('btnRecicla').style.visibility = 'visible';
-    document.getElementById('btnNoRecicla').style.visibility = 'visible'; 
-    document.getElementById('btnReiniciar').style.visibility = 'hidden'; 
+    document.getElementById('btnRecicla').style.display = 'block';
+    document.getElementById('btnNoRecicla').style.display = 'block'; 
+    document.getElementById('btnReiniciar').style.display = 'none'; 
     document.querySelectorAll('button').forEach(button => button.disabled = false); 
 
     niveles.forEach(nivel => mezclarArray(nivel));
