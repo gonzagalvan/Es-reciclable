@@ -32,14 +32,16 @@
                 <img src="" alt="" class="imagen" id="imagenElemento">
                 <div class="botones">
                     <button id="btnRecicla" onclick="verificarReciclable(true)">
-                        <img src="images/reciclable.png" alt="">
+                        <img src="images/reciclable.png" alt="Reciclable">
                     </button>
                     <button id="btnNoRecicla" onclick="verificarReciclable(false)">
-                        <img src="images/no-reciclable.png" alt="">
+                        <img src="images/no-reciclable.png" alt="No reciclable">
                     </button>
                 </div>
                 <div id="resultado"></div>
-                <button id="btnReiniciar" onclick="reiniciarJuego()" style="display: none;">Volver a Empezar</button>
+                <button id="btnReiniciar" onclick="reiniciarJuego()" style="visibility: hidden;">
+                    <img src="images/reiniciar.png" alt="Reinicar">
+                </button>
             </div>
         </div>
         <script src="juego.js"></script>

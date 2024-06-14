@@ -31,7 +31,10 @@ let racha = 0;
 
 function iniciarJuego() {
     document.getElementById('pantallaInicio').style.display = 'none';
-    document.getElementById('pantallaJuego').style.display = 'block';
+    document.getElementById('pantallaJuego').style.visibility = 'visible';
+    
+    niveles.forEach(nivel => mezclarArray(nivel));
+
     mostrarElemento();
 }
 
@@ -41,15 +44,15 @@ function mostrarElemento() {
         const elemento = elementos[indiceActual];
         document.getElementById('elemento').innerText = elemento.nombre;
         document.getElementById('imagenElemento').src = elemento.imagen;
-        document.getElementById('btnRecicla').style.display = 'block';
-        document.getElementById('btnNoRecicla').style.display = 'block';
+        document.getElementById('btnRecicla').style.visibility = 'visible';
+        document.getElementById('btnNoRecicla').style.visibility = 'visible';
     } else if (nivelActual < niveles.length - 1) {
         nivelActual++;
         indiceActual = 0;
         document.getElementById('elemento').innerText = `¡Nivel ${nivelActual + 1}!`;
         document.getElementById('imagenElemento').src = 'images/check.png';
-        document.getElementById('btnRecicla').style.display = 'none';
-        document.getElementById('btnNoRecicla').style.display = 'none'; 
+        document.getElementById('btnRecicla').style.visibility = 'hidden';
+        document.getElementById('btnNoRecicla').style.visibility = 'hidden'; 
         setTimeout(() => {
             mostrarElemento();
         }, 1000);
@@ -57,9 +60,9 @@ function mostrarElemento() {
         document.getElementById('elemento').innerText = '¡Juego terminado!';
         document.getElementById('imagenElemento').src = 'images/final.png';
         document.getElementById('resultado').innerText = `Puntuación: ${puntaje}`;
-        document.getElementById('btnReiniciar').style.display = 'block'; 
-        document.getElementById('btnRecicla').style.display = 'none';
-        document.getElementById('btnNoRecicla').style.display = 'none'; 
+        document.getElementById('btnReiniciar').style.visibility = 'visible'; 
+        document.getElementById('btnRecicla').style.visibility = 'hidden';
+        document.getElementById('btnNoRecicla').style.visibility = 'hidden'; 
     }
 }
 
@@ -93,11 +96,20 @@ function reiniciarJuego() {
     racha = 0;
 
     document.getElementById('resultado').innerText = '';
-    document.getElementById('btnRecicla').style.display = 'block';
-    document.getElementById('btnNoRecicla').style.display = 'block'; 
-    document.getElementById('btnReiniciar').style.display = 'none'; 
+    document.getElementById('btnRecicla').style.visibility = 'visible';
+    document.getElementById('btnNoRecicla').style.visibility = 'visible'; 
+    document.getElementById('btnReiniciar').style.visibility = 'hidden'; 
     document.querySelectorAll('button').forEach(button => button.disabled = false); 
 
+    niveles.forEach(nivel => mezclarArray(nivel));
 
     mostrarElemento();
+}
+
+function mezclarArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
 }

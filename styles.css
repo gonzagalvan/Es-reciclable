@@ -198,10 +198,12 @@ a:hover {
     object-fit: cover;
     margin: 20px 0;
 }
+
 .botones {
     display: flex;
     justify-content: center;
 }
+
 button {
     border: none;
     background: none;
@@ -209,24 +211,31 @@ button {
     padding: 10px 20px;
     font-size: 18px;
 }
+
 button img{
     transition: transform 0.3s ease; 
 }
+
 button:active img {
     transform: scale(0.5);
 }
+
 #resultado {
+    height: 30px; 
     margin-top: 20px;
     font-size: 20px;
 }
+
+
 .pantalla-inicio {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+
 .pantalla-juego {
-    display: none;
+    visibility: hidden;
 }
 
 .fondo-juego {
