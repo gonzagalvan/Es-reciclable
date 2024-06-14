@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>¿Es reciclable? - TP integrador Uade</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <a
+          id="logoLink"
+          href="https://guillermogerstner.github.io/Trabajo-Integrador-grupal/index.html"
+          target="_blank"
+        >
+          <img id="logo" src="./images/logo.png" alt="logo" />
+        </a>
+      </div>
+    </header>
+    <main>
+        <h1>¿Es reciclable?</h1>
+        <div class="pantalla-inicio" id="pantallaInicio">
+        <button onclick="iniciarJuego()">
+            <img src="images/comenzar.png" alt="">
+        </button>
+        </div>
+        <div class="pantalla-juego" id="pantallaJuego">
+            <div class="fondo-juego">
+                <div class="elemento" id="elemento"></div>
+                <img src="" alt="" class="imagen" id="imagenElemento">
+                <div class="botones">
+                    <button id="btnRecicla" onclick="verificarReciclable(true)">
+                        <img src="images/reciclable.png" alt="">
+                    </button>
+                    <button id="btnNoRecicla" onclick="verificarReciclable(false)">
+                        <img src="images/no-reciclable.png" alt="">
+                    </button>
+                </div>
+                <div id="resultado"></div>
+                <button id="btnReiniciar" onclick="reiniciarJuego()" style="display: none;">Volver a Empezar</button>
+            </div>
+        </div>
+        <script src="juego.js"></script>
+      <div id="desc">
+        <h2>Descripción del Juego:</h2>
+        <p class="descItem">
+            En este juego educativo y divertido, los jugadores enfrentan la tarea de determinar si un elemento mostrado es reciclable o no reciclable. 
+            Cada nivel presenta un nuevo objeto, desde botellas de plástico hasta latas de aluminio y otros materiales comunes. 
+            Los jugadores deben tomar decisiones rápidas y precisas, utilizando su conocimiento sobre el reciclaje para marcar cada elemento correctamente. 
+            ¡Demuestra tus habilidades ambientales y aprende sobre la importancia del reciclaje mientras te diviertes!
+        </p>
+        <h2>Reglas del Juego:</h2>
+        <ul>
+          <li class="descItem">
+            El objetivo del juego es indicar que elemento es un elemento reciclable y que elemento no es reciclable.
+          </li>
+          <li class="descItem">
+            Si tenes varios aciertos seguidos, vas a tener una bonificación de puntaje por cada respuesta correcta, y cuando respondas erróneamente, 
+            esa bonificación se desactivará.
+          </li>
+        </ul>
+        <h2>GitHub:</h2>
+        <p class="descItem">
+          GitHub:
+          <a
+            href="https://github.com/GuillermoGerstner/Trabajo-Integrador-Juego"
+            target="_blank"
+            >Enlace al Repo</a
+          >
+        </p>
+      </div>
+    </main>
+    <footer>
+      Derechos reservados - Sitio desarrollado para uso educativo - Diseño y
+      desarrollo Web - UADE - 2024
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
